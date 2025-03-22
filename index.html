@@ -19,10 +19,6 @@
             color: green;
             font-weight: bold;
         }
-
-        .error {
-            color: red;
-        }
     </style>
 </head>
 
@@ -30,13 +26,13 @@
     <h1>Gæt tallet</h1>
     <form id="numberForm">
         <label for="guess">Gæt et 4-cifret tal: </label>
-        <input type="number" id="guess" name="guess" min="1000" max="9999" required>
+        <input type="number" id="guess" name="guess" min="0000" max="9999" required>
         <button type="submit">Gæt</button>
     </form>
     <p id="message" class="message"></p>
 
     <script>
-        const correctNumber = [1, 2, 3, 4];
+        const correctNumber = [6, 5, 4, 4];
         const form = document.getElementById('numberForm');
         const message = document.getElementById('message');
         const inputField = document.getElementById('guess');
@@ -51,25 +47,25 @@
         form.addEventListener('submit', function (event) {
             event.preventDefault();
             const userInput = parseInt(inputField.value, 10);
-
             const digits = Array.from(String(userInput), Number);
-            console.log(digits);
 
             let correctNumbers = 0;
+            const attemptedDigits = [];
             digits.forEach((digit) => {
-                if (correctNumber.includes(digit)) correctNumbers++;
+                if (correctNumber.includes(digit) && !attemptedDigits.includes(digit)) correctNumbers++;
+                attemptedDigits.push(digit);
             });
 
             let correctPlacements = 0;
             digits.forEach((digit, idx) => {
                 if (correctNumber[idx] === digit) correctPlacements++;
+
             });
 
             const newParagraph = document.createElement('p');
             const textNode = document.createTextNode(`${userInput} - ${correctNumbers} tal er rigtige, ${correctPlacements} tal er placeret korrekt.`);
             newParagraph.appendChild(textNode);
-
-            // Append the new paragraph to the container
+            if (correctNumbers === 4, correctPlacements === 4) newParagraph.classList.add("success");
             message.appendChild(newParagraph);
         });
     </script>
