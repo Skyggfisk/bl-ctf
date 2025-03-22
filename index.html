@@ -65,7 +65,10 @@
             const newParagraph = document.createElement('p');
             const textNode = document.createTextNode(`${userInput} - ${correctNumbers} tal er rigtige, ${correctPlacements} tal er placeret korrekt.`);
             newParagraph.appendChild(textNode);
-            if (correctNumbers === 4, correctPlacements === 4) newParagraph.classList.add("success");
+            if (correctNumbers === 4, correctPlacements === 4) {
+                newParagraph.textContent = `${userInput} - Du fandt tallet! Kom op til crew-bordet!`;
+                newParagraph.classList.add("success");
+            };
             message.appendChild(newParagraph);
         });
     </script>
