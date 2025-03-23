@@ -18,8 +18,11 @@
         <h1>Gæt tallet</h1>
         <form id="numberForm">
             <label for="guess">Indtast et 4-cifret tal: </label>
-            <input type="number" id="guess" name="guess" min="0000" max="9999" required>
-            <button type="submit">🔢</button>
+            <div class="inputContainer">
+                <div class="inputPrefix">>></div>
+                <input type="number" id="guess" name="guess" min="0000" max="9999" required>
+                <button type="submit">Gæt</button>
+            </div>
         </form>
         <div id="message" class="message"></div>
     </div>

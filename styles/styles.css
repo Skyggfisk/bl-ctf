@@ -21,16 +21,15 @@ h1 {
     padding: 20px;
 }
 
-#numberForm {
+/* #numberForm {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-}
+} */
 
 .message {
-    color: rgb(138, 138, 251);
-    margin-top: 10px;
+    color: #0dff00;
     height: 300px;
     overflow-y: auto;
     text-align: left;
@@ -40,12 +39,61 @@ h1 {
 }
 
 .success {
-    color: rgb(45, 145, 45);
+    color: #ff8400;
     text-align: left;
     font-weight: bold;
     font-style: italic;
     font-size: 16px;
-    border: 1px solid rgb(45, 145, 45);
+    border: 1px solid #ff8400;
     padding: 5px;
     width: 450px;
+}
+
+input {
+    background-color: #474747;
+    border: none;
+    outline: none;
+    width: 350px;
+    font-size: 13px;
+    padding: 5px;
+    color: #0dff00;
+}
+
+.inputPrefix {
+    padding: 5px;
+}
+
+.inputContainer {
+    display: flex;
+    background-color: #474747;
+    font-size: 13px;
+    color: #0dff00;
+    margin-top: 10px;
+}
+
+button {
+    background-color: #2a2a2a;
+    font-size: 13px;
+    color: #0dff00;
+    border: none;
+    outline: none;
+    width: 150px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:active {
+    background-color: #505050;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
 }
