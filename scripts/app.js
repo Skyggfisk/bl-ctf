@@ -3,6 +3,8 @@ const form = document.getElementById('numberForm');
 const message = document.getElementById('message');
 const inputField = document.getElementById('guess');
 
+inputField.focus();
+
 // Disallow more than 4 digits
 inputField.addEventListener('input', function () {
     if (inputField.value.length > 4) {
@@ -37,4 +39,7 @@ form.addEventListener('submit', function (event) {
         newParagraph.classList.add("success");
     };
     message.prepend(newParagraph);
+
+    inputField.value = "";
+    inputField.focus();
 });
