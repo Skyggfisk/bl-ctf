@@ -1,0 +1,51 @@
+body {
+    font-family: "Roboto Mono", monospace;
+    color: #fff;
+    /* background-color: #3c3c3c; */
+    background: linear-gradient(to bottom, #170052, #4a0689, #4a0060);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    width: 500px;
+    border: 1px solid #ff6614;
+    border-radius: 2px;
+    padding: 20px;
+}
+
+#numberForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.message {
+    color: rgb(138, 138, 251);
+    margin-top: 10px;
+    height: 300px;
+    overflow-y: auto;
+    text-align: left;
+    background-color: #474747;
+    font-size: 13px;
+    padding: 5px;
+}
+
+.success {
+    color: rgb(45, 145, 45);
+    text-align: left;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 16px;
+    border: 1px solid rgb(45, 145, 45);
+    padding: 5px;
+    width: 450px;
+}

@@ -5,73 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlicherLAN</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .message {
-            color: blue;
-            margin-top: 10px;
-        }
-
-        .success {
-            color: green;
-            font-weight: bold;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="assets/bot.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
-    <h1>Gæt tallet</h1>
-    <form id="numberForm">
-        <label for="guess">Gæt et 4-cifret tal: </label>
-        <input type="number" id="guess" name="guess" min="0000" max="9999" required>
-        <button type="submit">Gæt</button>
-    </form>
-    <p id="message" class="message"></p>
+    <div class="container">
+        <h1>Gæt tallet</h1>
+        <form id="numberForm">
+            <label for="guess">Indtast et 4-cifret tal: </label>
+            <input type="number" id="guess" name="guess" min="0000" max="9999" required>
+            <button type="submit">🔢</button>
+        </form>
+        <div id="message" class="message"></div>
+    </div>
 
-    <script>
-        const correctNumber = [6, 5, 4, 4];
-        const form = document.getElementById('numberForm');
-        const message = document.getElementById('message');
-        const inputField = document.getElementById('guess');
-
-        // Disallow more than 4 digits
-        inputField.addEventListener('input', function () {
-            if (inputField.value.length > 4) {
-                inputField.value = inputField.value.slice(0, 4);
-            }
-        });
-
-        form.addEventListener('submit', function (event) {
-            event.preventDefault();
-            const userInput = parseInt(inputField.value, 10);
-            const digits = Array.from(String(userInput), Number);
-
-            let correctNumbers = 0;
-            const attemptedDigits = [];
-            digits.forEach((digit) => {
-                if (correctNumber.includes(digit) && !attemptedDigits.includes(digit)) correctNumbers++;
-                attemptedDigits.push(digit);
-            });
-
-            let correctPlacements = 0;
-            digits.forEach((digit, idx) => {
-                if (correctNumber[idx] === digit) correctPlacements++;
-
-            });
-
-            const newParagraph = document.createElement('p');
-            const textNode = document.createTextNode(`${userInput} - ${correctNumbers} tal er rigtige, ${correctPlacements} tal er placeret korrekt.`);
-            newParagraph.appendChild(textNode);
-            if (correctNumbers === 4, correctPlacements === 4) {
-                newParagraph.textContent = `${userInput} - Du fandt tallet! Kom op til crew-bordet!`;
-                newParagraph.classList.add("success");
-            };
-            message.appendChild(newParagraph);
-        });
-    </script>
+    <script src="scripts/app.js"></script>
 </body>
 
 </html>
