@@ -5,16 +5,23 @@ const inputField = document.getElementById('guess');
 
 inputField.focus();
 
-// Disallow more than 4 digits
-inputField.addEventListener('input', function () {
-    if (inputField.value.length > 4) {
-        inputField.value = inputField.value.slice(0, 4);
-    }
+inputField.addEventListener("blur", (event) => {
+    event.target.focus();
 });
+
+inputField.addEventListener("input", function () {
+    this.value = this.value.replace(/\D/g, "");
+})
 
 form.addEventListener('submit', function (event) {
     event.preventDefault();
-    const userInput = parseInt(inputField.value, 10);
+
+    if (inputField.value.length < 4) {
+        inputField.focus();
+        return;
+    };
+
+    const userInput = inputField.value;
     const digits = Array.from(String(userInput), Number);
 
     let correctNumbers = 0;

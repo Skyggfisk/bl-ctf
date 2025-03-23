@@ -16,11 +16,11 @@
 <body>
     <div class="container">
         <h1>GÆT TALLET</h1>
-        <form id="numberForm">
+        <form id="numberForm" novalidate autocomplete="off">
             <label for="guess">Indtast et 4-cifret tal: </label>
             <div class="inputContainer">
                 <div class="inputPrefix">>></div>
-                <input type="number" id="guess" name="guess" min="0000" max="9999" required>
+                <input type="text" id="guess" name="guess" minlength="4" maxlength="4" autocomplete="off" required>
                 <button type="submit">Gæt</button>
             </div>
         </form>

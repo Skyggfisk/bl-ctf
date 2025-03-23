@@ -47,13 +47,14 @@ label {
 }
 
 input {
-    background-color: #474747;
+    background-color: #4f4f4f;
     border: none;
     outline: none;
     width: 350px;
     font-size: 13px;
     padding: 5px;
     color: #0dff00;
+    margin: 0;
 }
 
 .inputPrefix {
@@ -62,7 +63,7 @@ input {
 
 .inputContainer {
     display: flex;
-    background-color: #474747;
+    background-color: #4f4f4f;
     font-size: 13px;
     color: #0dff00;
     margin-top: 10px;
@@ -83,14 +84,4 @@ button:hover {
 
 button:active {
     background-color: #505050;
-}
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-input[type=number] {
-    -moz-appearance: textfield;
 }
