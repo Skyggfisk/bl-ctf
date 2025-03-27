@@ -1,4 +1,4 @@
-const correctNumber = [6, 5, 4, 4];
+const correctNumber = [6, 5, 4, 9];
 const form = document.getElementById('numberForm');
 const message = document.getElementById('message');
 const inputField = document.getElementById('guess');
@@ -42,7 +42,7 @@ form.addEventListener('submit', function (event) {
     newParagraph.append(">> ");
     newParagraph.appendChild(textNode);
     if (correctNumbers === 4, correctPlacements === 4) {
-        newParagraph.textContent = `>> [${userInput}] - Du fandt tallet!`;
+        newParagraph.textContent = `>> 56.54321739275542, 10.035217532279528 <<`;
         newParagraph.classList.add("success");
     };
     message.prepend(newParagraph);

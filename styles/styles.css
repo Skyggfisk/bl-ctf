@@ -1,7 +1,6 @@
 body {
     font-family: "Roboto Mono", monospace;
     color: #fff;
-    /* background-color: #3c3c3c; */
     background: linear-gradient(to bottom, #170052, #4a0689, #4a0060);
     display: flex;
     justify-content: center;
@@ -37,7 +36,7 @@ label {
 
 .success {
     color: #ff8400;
-    text-align: left;
+    text-align: center;
     font-weight: bold;
     font-style: italic;
     font-size: 16px;
